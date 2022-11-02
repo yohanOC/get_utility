@@ -2,7 +2,7 @@
 This xx.xx.xx.xx will be start configure by script at Fri Oct 21 18:18:12
 spawn ssh -o StrictHostKeyChecking=no xxxx@xx.xx.xx.xx
 Password:
-R1>show isis adjacency
+root@R1>show isis adjacency
 Interface             System         L State        Hold (secs) SNPA
 ge-0/0/10.0           R2 2 Up               8  b0:43:d0:d:ee:90
 
