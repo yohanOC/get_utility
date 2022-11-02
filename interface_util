@@ -1,0 +1,1 @@
+show interface ge-0/0/10 | match rate
