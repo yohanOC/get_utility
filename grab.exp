@@ -1,0 +1,47 @@
+#!/usr/bin/expect -f
+
+ set time [exec date]
+ #set time [exec date "+%d"]
+ set output [exec date "+%b"]
+
+ 
+ #load config from shell script
+ set config [lindex $argv 0]
+ set ip [lindex $argv 1]
+
+ #set variable
+ set username "xxxxx"
+ set password "xxxxx"
+ close $fp
+
+ 
+#procedure for remote and configure
+proc func_remote { ip config username password } {
+    #set global variable on expect
+    global spawn_id
+    set host $ip  
+    set prom "#|>"
+    set username $username
+    set password $password
+    set config $config
+    spawn ssh -o StrictHostKeyChecking=no $username\@$host
+    expect {
+            timeout { send_user "\nTimeout Exceeded - Check Host\n"; exit 1 }
+            eof { send_user "\nSSH Connection To $host Failed\n"; exit 1 }
+            "*#" {}
+            "*assword:" {
+            send "$password\n"
+            }
+    }
+    expect -re $prom
+    send "$config\n"
+    expect -re $prom
+    send "exit\n"
+    #sleep 3
+}
+
+
+main_prog {
+    #call fuction
+    func_remote $ip $config $username $password
+}
