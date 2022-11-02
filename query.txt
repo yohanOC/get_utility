@@ -1,0 +1,2 @@
+SNMPv2-MIB::sysDescr.0 = STRING: R1
+SNMPv2-MIB::sysName.0 = STRING: R1
