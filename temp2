@@ -1,6 +1,6 @@
-
-R1#show interfaces brief wide | exclude Disable|Down
-
-Port  Link     Port-State  Speed Tag MAC            Name
-1/2   Up       Forward     1G    No  00bb.eda0.3030 BB_R2_1/1/4
-1/3   Up       Forward     1G    Yes 00bb.eda0.4040 Customer
+#this file will be get utility information from every interface BB in file temp
+root@R1> show interfaces ge-0/0/10 | match rate 
+  Input rate     : 92584 bps (53 pps)
+  Output rate    : 133488 bps (100 pps)
+    FEC Corrected Errors Rate               0
+    FEC Uncorrected Errors Rate             0
