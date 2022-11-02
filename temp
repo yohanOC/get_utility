@@ -1,0 +1,8 @@
+#this file result from grab and will be collect interface BB for the next processs
+This xx.xx.xx.xx will be start configure by script at Fri Oct 21 18:18:12
+spawn ssh -o StrictHostKeyChecking=no xxxx@xx.xx.xx.xx
+Password:
+R1#show isis nei
+Total number of IS-IS Neighbors: 1
+System Id      Interface    SNPA           State Holdtime Type Pri StateChgeTime Protocol
+xxxx eth 1/2      00bb.f0d3.fe90 UP    27       ISL2 64  2  :12 :56:37  ISIS
